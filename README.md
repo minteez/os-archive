@@ -73,29 +73,6 @@
 
 ---
 
-## 🚀 Getting Started
-
-Since **OS Archive** is built as a single-page standalone web application, running it locally is seamless:
-
-1. **Clone the repository:**
-```bash
-git clone https://github.com/your-username/os-archive.git
-
-```
-
-
-2. **Navigate to the directory:**
-```bash
-cd os-archive
-
-```
-
-
-3. **Open in browser:**
-Double-click `index.html` or serve it via any static server (e.g., Live Server extension in VS Code, Python `http.server`, or GitHub Pages).
-
----
-
 ## ♿ Accessibility & Performance
 
 * Reduced-motion query support (`prefers-reduced-motion`).
