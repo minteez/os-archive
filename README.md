@@ -4,6 +4,10 @@
 
 ---
 
+## ⚠️ Notice: This project is no longer being updated. Please see the Archival Notice for details.
+
+---
+
 ## ✨ Key Features
 
 ### 📜 Interactive Chronological Timeline
