@@ -129,10 +129,7 @@ function renderOSDetail(id) {
 
         <section class="detail-section">
           <h2>Screenshots / Gallery</h2>
-          <div class="screenshot-fallback">
-            <p>Historical screenshots aren't hotlinked here to respect licensing. View verified imagery at the sources below.</p>
-            <a class="btn btn--outline btn--small" href="${os.sourceLinks[0] ? escapeHTML(os.sourceLinks[0].url) : "#"}" target="_blank" rel="noopener">VIEW SOURCE</a>
-          </div>
+          ${screenshotsSection(os)}
         </section>
 
         <section class="detail-section">
@@ -165,6 +162,28 @@ function renderOSDetail(id) {
       </aside>
     </div>
   </article>`;
+}
+
+function screenshotsSection(os) {
+  if (!os.screenshots || !os.screenshots.length) {
+    return `
+    <div class="screenshot-fallback">
+      <p>No screenshot has been added for this entry yet. View verified imagery at the source below.</p>
+      <a class="btn btn--outline btn--small" href="${os.sourceLinks[0] ? escapeHTML(os.sourceLinks[0].url) : "#"}" target="_blank" rel="noopener">VIEW SOURCE</a>
+    </div>`;
+  }
+  return `
+  <div class="screenshot-gallery">
+    ${os.screenshots.map(s => `
+      <figure class="screenshot-item">
+        <img src="assets/images/screenshots/${escapeHTML(s.file)}" alt="${escapeHTML(s.caption || os.name + " " + os.version)}" loading="lazy"
+             onerror="this.closest('.screenshot-item').style.display='none'">
+        <figcaption>
+          <span>${escapeHTML(s.caption || "")}</span>
+          ${s.source ? `<a href="${escapeHTML(s.source)}" target="_blank" rel="noopener">Source</a>` : ""}
+        </figcaption>
+      </figure>`).join("")}
+  </div>`;
 }
 
 function initDetailPage() {

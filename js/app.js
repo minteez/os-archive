@@ -4,7 +4,7 @@
    GitHub Pages. Each route delegates rendering to a module-level function.
    ========================================================================= */
 
-const BUILD_VERSION = "v2.0.0"; // <- single place to bump the build number
+const BUILD_VERSION = "v1.0.0"; // <- single place to bump the build number
 
 const FAMILY_META = {
   "Windows":            { color: "#00b7ff", short: "WIN" },
@@ -37,10 +37,16 @@ function initials(name) {
   return name.split(/\s+/).slice(0, 2).map(w => w[0]).join("").toUpperCase();
 }
 
-/* ---------- monogram "logo" tile (no hotlinked images needed) ---------- */
+/* ---------- logo tile: real image if provided, monogram fallback otherwise ---------- */
 function logoTile(os, size = "md") {
   const m = familyMeta(os.family);
-  return `<div class="logo-tile logo-tile--${size}" style="--tile-color:${m.color}" aria-hidden="true">${escapeHTML(initials(os.name))}</div>`;
+  const monogram = `<div class="logo-tile logo-tile--${size}" style="--tile-color:${m.color}" aria-hidden="true">${escapeHTML(initials(os.name))}</div>`;
+  // Each OS record has a unique `id` (e.g. "win-95", "win-xp", "mac-osx-tiger") —
+  // that's what the logo filename should match, NOT the shared `family` name,
+  // since different releases of the same family have different logos.
+  const src = `assets/images/logos/${os.id}.png`;
+  const monogramEscaped = monogram.replace(/`/g, "\\`");
+  return `<img class="logo-tile logo-tile--${size} logo-tile--img" style="--tile-color:${m.color}" src="${src}" alt="${escapeHTML(os.name + " " + os.version + " logo")}" loading="lazy" onerror="this.outerHTML=\`${monogramEscaped}\`">`;
 }
 
 /* ---------- OS card (used by explorer, search, favorites, related) ---------- */
@@ -257,7 +263,7 @@ function buildFooter() {
       </div>
     </div>
     <div class="container footer__legal">
-      <p>Engineered by Minteez &amp; Claude AI. © 2026. All data streams reserved.</p>
+      <p>Engineered by Minteez &amp; Gemini AI. © 2026. All data streams reserved.</p>
       <p class="footer__build">Build ${BUILD_VERSION} · ${stats.total} entries archived</p>
     </div>`;
 }
