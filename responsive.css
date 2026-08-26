@@ -1,0 +1,91 @@
+/* =========================================================================
+   OS ARCHIVE — RESPONSIVE RULES
+   Mobile-first adjustments layered on top of style.css. Desktop gets a
+   horizontal-scrolling timeline; mobile gets the default vertical stack.
+   ========================================================================= */
+
+/* ---------- Mobile navigation ---------- */
+@media (max-width: 880px) {
+  .nav__hamburger { display: flex; }
+  .nav__links {
+    position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
+    background: var(--bg-void); flex-direction: column; padding: 24px; gap: 4px;
+    transform: translateX(100%); transition: transform .2s ease; overflow-y: auto;
+  }
+  body.nav-open .nav__links { transform: translateX(0); }
+  .nav__links a { padding: 14px 4px; border-bottom: 1px solid var(--border-dim); font-size: 0.95rem; }
+  .nav__search { display: none; }
+  body.nav-open .nav__search {
+    display: flex; position: fixed; top: calc(var(--nav-h) - 1px); left: 24px; right: 24px; z-index: 101;
+  }
+}
+
+@media (min-width: 881px) {
+  .nav__links { display: flex !important; }
+}
+
+/* ---------- Stats strip ---------- */
+@media (max-width: 900px) { .stats-strip { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 520px) { .stats-strip { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---------- Home links / footer ---------- */
+@media (max-width: 900px) { .home-links__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .home-links__grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .footer__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .footer__grid { grid-template-columns: 1fr; } }
+
+/* ---------- Explorer / filters become a slide-out panel on mobile ---------- */
+@media (max-width: 900px) {
+  .explorer-layout { grid-template-columns: 1fr; }
+  .filter-panel { position: static; }
+}
+
+/* ---------- Detail page stacks ---------- */
+@media (max-width: 900px) {
+  .detail-grid { grid-template-columns: 1fr; }
+  .spec-card { position: static; }
+}
+
+/* ---------- Timeline: vertical on mobile (default), horizontal scroll on desktop ---------- */
+@media (min-width: 901px) {
+  .timeline { border-left: none; margin-left: 0; padding-top: 8px; }
+  .timeline-track-scroll { overflow-x: auto; }
+  .timeline#timeline-track {
+    display: flex; align-items: flex-start; gap: 0; overflow-x: auto; padding-bottom: 24px;
+    border-left: none; position: relative;
+  }
+  .timeline#timeline-track::before {
+    content: ""; position: absolute; left: 0; right: 0; top: 44px; height: 2px; background: var(--border-mid);
+  }
+  .timeline-era {
+    flex: 0 0 260px; padding-left: 0; margin-bottom: 0; margin-right: 8px;
+  }
+  .timeline-era__label { position: static; margin-bottom: 20px; text-align: center; }
+  .timeline-era__items { flex-direction: column; margin-top: 0; }
+}
+
+/* ---------- Comparison table: stacked cards on small screens ---------- */
+@media (max-width: 700px) {
+  .compare-table, .compare-table thead, .compare-table tbody, .compare-table th, .compare-table td, .compare-table tr {
+    display: block; width: 100%;
+  }
+  .compare-table thead { display: none; }
+  .compare-table tr { border-bottom: 2px solid var(--border-mid); padding: 12px 0; }
+  .compare-table th[scope="row"] { color: var(--crt-green); padding-bottom: 4px; }
+  .compare-table td { padding: 4px 0 10px; }
+  .compare-picker { flex-direction: column; align-items: stretch; }
+}
+
+/* ---------- Quiz options single column on narrow screens ---------- */
+@media (max-width: 560px) {
+  .quiz-options { grid-template-columns: 1fr; }
+  .connect-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- General touch target comfort ---------- */
+@media (max-width: 600px) {
+  .btn { width: 100%; justify-content: center; }
+  .hero__actions { flex-direction: column; }
+  .detail-hero__inner { flex-direction: column; align-items: flex-start; }
+  .os-of-day-card { flex-direction: column; align-items: flex-start; }
+}
