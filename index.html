@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OS Archive — A Living Museum of Operating Systems</title>
+<meta name="description" content="OS Archive is a virtual museum documenting the history of operating systems, from MS-DOS and classic Mac OS to modern Windows, macOS, Linux and mobile platforms.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%230a0f14'/%3E%3Ctext x='50' y='64' font-size='54' text-anchor='middle' fill='%2339ff88' font-family='monospace'%3E▮%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<a class="skip-link" href="#view">Skip to content</a>
+
+<header class="site-nav" id="site-nav" role="banner"></header>
+
+<main id="view" tabindex="-1" aria-live="polite"></main>
+
+<footer class="site-footer" id="site-footer" role="contentinfo"></footer>
+
+<!-- Data & storage -->
+<script src="js/data.js"></script>
+<script src="js/storage.js"></script>
+
+<!-- Feature modules (define render/init functions referenced by app.js's router) -->
+<script src="js/filters.js"></script>
+<script src="js/timeline.js"></script>
+<script src="js/search.js"></script>
+<script src="js/comparison.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/archive.js"></script>
+<script src="js/content.js"></script>
+
+<!-- App shell: nav, footer, router (must load last) -->
+<script src="js/app.js"></script>
+</body>
+</html>
