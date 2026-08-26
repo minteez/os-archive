@@ -4,7 +4,7 @@
    GitHub Pages. Each route delegates rendering to a module-level function.
    ========================================================================= */
 
-const BUILD_VERSION = "v1.0.0"; // <- single place to bump the build number
+const BUILD_VERSION = "v2.0.0"; // <- single place to bump the build number
 
 const FAMILY_META = {
   "Windows":            { color: "#00b7ff", short: "WIN" },
