@@ -257,7 +257,7 @@ function buildFooter() {
       </div>
     </div>
     <div class="container footer__legal">
-      <p>Engineered by Minteez &amp; Gemini AI. © 2026. All data streams reserved.</p>
+      <p>Engineered by Minteez &amp; Claude AI. © 2026. All data streams reserved.</p>
       <p class="footer__build">Build ${BUILD_VERSION} · ${stats.total} entries archived</p>
     </div>`;
 }
