@@ -7,12 +7,14 @@
 
 const GALLERY_CATEGORIES = [
   { key: "Windows", label: "Windows" },
+  { key: "Windows Mobile", label: "Windows Mobile / Phone / Pocket PC" },
   { key: "Classic Mac", label: "Classic Mac", match: o => o.family === "Apple" && o.releaseYear < 2001 },
   { key: "macOS", label: "macOS / OS X", match: o => o.family === "Apple" && o.releaseYear >= 2001 },
   { key: "Linux", label: "Linux", match: o => o.family === "Linux Distribution" },
   { key: "UNIX", label: "UNIX", match: o => o.family === "UNIX" },
   { key: "BSD", label: "BSD", match: o => o.family === "BSD" },
   { key: "Mobile", label: "Mobile", match: o => o.family === "Mobile" },
+  { key: "Capability-based", label: "Capability-based Systems" },
   { key: "Experimental", label: "Experimental & Other", match: o => o.family === "Other" }
 ];
 

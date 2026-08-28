@@ -262,7 +262,8 @@ function renderAbout() {
       <h2>About the Website</h2>
       <p>OS Archive is a digital museum created to document and explore the evolution of operating systems. The project focuses on computing history, operating systems, user interfaces, software evolution, digital preservation, and historical exploration.</p>
       <p>The archive currently holds ${stats.total} entries spanning ${stats.decades} historical decades, covering Windows, Apple/Mac, Linux kernels and distributions, UNIX and BSD, mobile and console platforms, and a range of experimental and hobbyist systems.</p>
-      <p>OS Archive is an independent educational project and is not affiliated with Microsoft, Apple, the Linux Foundation, Canonical, Red Hat, or any other company or project referenced within it, unless explicitly stated.</p>
+      <p>OS Archive is an independent educational project and is not affiliated with Microsoft, Apple, the Linux Foundation, Canonical, Red Hat, Google, or any other company or project referenced within it, unless explicitly stated.</p>
+      <p class="about-disclaimer">OS Archive is an independent educational project. Product names, logos, trademarks, and historical materials belong to their respective owners. This website is not affiliated with Microsoft, Apple, Google, the Linux Foundation, or any other referenced organisation unless explicitly stated.</p>
     </section>
 
     <section class="detail-section developer-section">

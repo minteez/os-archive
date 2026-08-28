@@ -9,8 +9,8 @@
 const QUIZ_POOLS = {
   EASY:   OS_DATA.filter(o => o.tags.includes("iconic")),
   MEDIUM: OS_DATA.filter(o => !o.tags.includes("iconic") && ["Windows","Apple","Linux Distribution","Mobile"].includes(o.family)),
-  HARD:   OS_DATA.filter(o => !o.tags.includes("iconic") && ["UNIX","BSD","Console","Linux Kernel"].includes(o.family)),
-  EXPERT: OS_DATA.filter(o => !o.tags.includes("iconic") && o.family === "Other")
+  HARD:   OS_DATA.filter(o => !o.tags.includes("iconic") && ["UNIX","BSD","Console","Linux Kernel","Windows Mobile"].includes(o.family)),
+  EXPERT: OS_DATA.filter(o => !o.tags.includes("iconic") && ["Other","Capability-based"].includes(o.family))
 };
 
 let quizState = null;

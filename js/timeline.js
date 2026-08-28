@@ -50,13 +50,23 @@ function initTimeline() {
         <div class="timeline-era__items">
           ${byDecade[decade].map(o => {
             const m = familyMeta(o.family);
+            const hasReleases = o.releases && o.releases.length;
             return `
-            <a class="timeline-item" href="#/archive/${o.id}" style="--tile-color:${m.color}" title="${escapeHTML(o.name)} ${escapeHTML(o.version)} (${o.releaseYear})">
-              <span class="timeline-item__dot" aria-hidden="true"></span>
-              <span class="timeline-item__year">${o.releaseYear}</span>
-              <span class="timeline-item__name">${escapeHTML(o.name)}</span>
-              <span class="timeline-item__version">${escapeHTML(o.version)}</span>
-            </a>`;
+            <div class="timeline-item-wrap">
+              <a class="timeline-item ${hasReleases ? "timeline-item--expandable" : ""}" href="#/archive/${o.id}" style="--tile-color:${m.color}" title="${escapeHTML(o.name)} ${escapeHTML(o.version)} (${o.releaseYear})">
+                <span class="timeline-item__dot" aria-hidden="true"></span>
+                <span class="timeline-item__year">${o.releaseYear}</span>
+                <span class="timeline-item__name">${escapeHTML(o.name)}</span>
+                <span class="timeline-item__version">${escapeHTML(o.version)}</span>
+              </a>
+              ${hasReleases ? `
+                <button class="timeline-expand-btn" data-expand="${o.id}" aria-expanded="false">
+                  ▸ ${o.releases.length} tracked releases
+                </button>
+                <div class="timeline-releases" id="timeline-releases-${o.id}" hidden>
+                  ${o.releases.map(r => `<div class="timeline-release-chip"><span>${escapeHTML(r.version)}</span><span>${escapeHTML(r.date)}</span></div>`).join("")}
+                </div>` : ""}
+            </div>`;
           }).join("")}
         </div>
       </div>`).join("") || `<p class="empty-state">No systems in this filter.</p>`;
@@ -68,6 +78,16 @@ function initTimeline() {
     activeFamily = btn.dataset.family;
     document.querySelectorAll(".legend-chip").forEach(c => c.classList.toggle("is-active", c === btn));
     draw();
+  });
+
+  document.getElementById("timeline-track").addEventListener("click", e => {
+    const btn = e.target.closest("[data-expand]");
+    if (!btn) return;
+    const panel = document.getElementById(`timeline-releases-${btn.dataset.expand}`);
+    const open = panel.hasAttribute("hidden");
+    panel.toggleAttribute("hidden", !open);
+    btn.setAttribute("aria-expanded", String(open));
+    btn.textContent = btn.textContent.replace(/^[▸▾]/, open ? "▾" : "▸");
   });
 
   draw();

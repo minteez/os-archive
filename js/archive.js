@@ -95,6 +95,8 @@ function renderOSDetail(id) {
           </ul>
         </section>
 
+        ${releaseHistorySection(os)}
+
         <section class="detail-section">
           <h2>Interface</h2>
           <p>${escapeHTML(os.interface || "Unverified")}${os.desktopEnvironment ? ` — shell/environment: ${escapeHTML(os.desktopEnvironment)}` : ""}</p>
@@ -164,6 +166,30 @@ function renderOSDetail(id) {
   </article>`;
 }
 
+function releaseHistorySection(os) {
+  if (!os.releases || !os.releases.length) return "";
+  return `
+  <section class="detail-section">
+    <h2>Release History</h2>
+    <p class="release-history__intro">${os.releases.length} tracked releases. Expand any entry for its build, codename and date.</p>
+    <div class="release-history">
+      ${os.releases.map((r, i) => `
+        <details class="release-item" ${i === os.releases.length - 1 ? "open" : ""}>
+          <summary>
+            <span class="release-item__version">${escapeHTML(r.version)}</span>
+            <span class="release-item__date">${escapeHTML(r.date)}</span>
+            <span class="release-item__status chip chip--outline">${escapeHTML(r.status)}</span>
+          </summary>
+          <dl class="release-item__body">
+            <dt>Codename</dt><dd>${escapeHTML(r.codename || "—")}</dd>
+            <dt>Build</dt><dd>${escapeHTML(r.build || "—")}</dd>
+            <dt>Notes</dt><dd>${escapeHTML(r.notes || "—")}</dd>
+          </dl>
+        </details>`).join("")}
+    </div>
+  </section>`;
+}
+
 function screenshotsSection(os) {
   if (!os.screenshots || !os.screenshots.length) {
     return `
@@ -195,6 +221,7 @@ function initDetailPage() {
 
 const FAMILY_INTRO = {
   "Windows": { title: "Windows", blurb: "From MS-DOS's command line to the Fluent-design Windows 11, trace Microsoft's operating system through five decades of PC computing." },
+  "Windows Mobile": { title: "Windows Mobile History", blurb: "Windows CE, Pocket PC, Windows Mobile, Windows Phone, and Windows 10 Mobile are related but distinct products — Microsoft's two-decade, ultimately unsuccessful attempt at a mobile platform." },
   "Apple": { title: "Apple / Mac", blurb: "From the original 1984 Macintosh System software through the Unix-based transformation of Mac OS X and today's Apple Silicon macOS." },
   "Linux Kernel": { title: "Linux Kernel", blurb: "The kernel Linus Torvalds began in 1991, now the most widely deployed kernel on Earth — from servers to smartphones." },
   "Linux Distribution": { title: "Linux Distributions", blurb: "Hundreds of distinct operating systems share the Linux kernel. Explore the major families and how they relate to one another." },
@@ -202,6 +229,7 @@ const FAMILY_INTRO = {
   "BSD": { title: "BSD", blurb: "Berkeley's UNIX derivative gave the world TCP/IP networking and lives on in FreeBSD, OpenBSD, NetBSD — and even game consoles." },
   "Mobile": { title: "Mobile Operating Systems", blurb: "From stylus-driven PDAs to the multi-touch smartphone platforms that now outnumber every desktop OS combined." },
   "Console": { title: "Console Operating Systems", blurb: "The operating systems, often invisible to players, running inside PlayStation, Xbox and Nintendo hardware." },
+  "Capability-based": { title: "Capability-based Systems", blurb: "Systems where access to any resource requires holding an explicit, unforgeable capability token — from 1970s research machines to Fuchsia and HarmonyOS NEXT today." },
   "Other": { title: "Experimental & Other Systems", blurb: "Historical, hobbyist, embedded and research operating systems that don't fit neatly into the major families — but matter all the same." }
 };
 

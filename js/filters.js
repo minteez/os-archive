@@ -12,7 +12,11 @@ const Filters = (() => {
     deviceType: "all",
     developer: "all",
     yearMin: null,
-    yearMax: null
+    yearMax: null,
+    hasReleaseHistory: false,
+    hasCodename: false,
+    hasScreenshots: false,
+    hasDevBuilds: false
   };
 
   function reset(presetFamily) {
@@ -24,7 +28,11 @@ const Filters = (() => {
       deviceType: "all",
       developer: "all",
       yearMin: Math.min(...years),
-      yearMax: Math.max(...years)
+      yearMax: Math.max(...years),
+      hasReleaseHistory: false,
+      hasCodename: false,
+      hasScreenshots: false,
+      hasDevBuilds: false
     };
   }
 
@@ -93,6 +101,16 @@ const Filters = (() => {
         </div>
         <p class="range-readout"><span id="f-year-min-label">${state.yearMin}</span> — <span id="f-year-max-label">${state.yearMax}</span></p>
       </div>
+
+      <div class="filter-group">
+        <label>Has…</label>
+        <div class="filter-toggles">
+          <label class="filter-toggle"><input type="checkbox" id="f-has-releases" ${state.hasReleaseHistory?"checked":""}> Release history</label>
+          <label class="filter-toggle"><input type="checkbox" id="f-has-codename" ${state.hasCodename?"checked":""}> Codename</label>
+          <label class="filter-toggle"><input type="checkbox" id="f-has-devbuilds" ${state.hasDevBuilds?"checked":""}> Development builds</label>
+          <label class="filter-toggle"><input type="checkbox" id="f-has-screenshots" ${state.hasScreenshots?"checked":""}> Screenshots</label>
+        </div>
+      </div>
     </div>`;
   }
 
@@ -114,6 +132,10 @@ const Filters = (() => {
       $("f-year-max-label").textContent = state.yearMax;
       onChange();
     });
+    $("f-has-releases").addEventListener("change", e => { state.hasReleaseHistory = e.target.checked; onChange(); });
+    $("f-has-codename").addEventListener("change", e => { state.hasCodename = e.target.checked; onChange(); });
+    $("f-has-devbuilds").addEventListener("change", e => { state.hasDevBuilds = e.target.checked; onChange(); });
+    $("f-has-screenshots").addEventListener("change", e => { state.hasScreenshots = e.target.checked; onChange(); });
     $("filters-reset").addEventListener("click", () => {
       const keepFamily = state.family;
       reset();
@@ -140,6 +162,16 @@ const Filters = (() => {
       if (state.developer !== "all" && !(o.developer || "").startsWith(state.developer)) return false;
       if (state.yearMin !== null && o.releaseYear && o.releaseYear < state.yearMin) return false;
       if (state.yearMax !== null && o.releaseYear && o.releaseYear > state.yearMax) return false;
+      if (state.hasReleaseHistory && !(o.releases && o.releases.length)) return false;
+      if (state.hasScreenshots && !(o.screenshots && o.screenshots.length)) return false;
+      if (state.hasCodename) {
+        const hasCodename = o.releases && o.releases.some(r => r.codename && r.codename !== "—" && !r.codename.startsWith("("));
+        if (!hasCodename) return false;
+      }
+      if (state.hasDevBuilds) {
+        const hasDevBuild = o.releases && o.releases.some(r => /beta|insider|preview|cancelled|in development/i.test(r.status || ""));
+        if (!hasDevBuild) return false;
+      }
       if (state.q) {
         const hay = [o.name, o.version, o.developer, o.family, o.category, o.releaseYear, ...(o.tags||[])].join(" ").toLowerCase();
         if (!hay.includes(state.q.toLowerCase())) return false;

@@ -240,53 +240,47 @@ const OS_DATA = [
   interestingFacts:["Microsoft offered Windows 10 as a free upgrade to Windows 7 and 8.1 users for the first year, an unusual move for a paid OS.","Windows 10 skipped the number '9' in its naming, a decision Microsoft never fully explained publicly.","Support for Windows 10 ended on October 14, 2025."],
   historicalImportance:"Windows 10 unified Microsoft's update strategy and interface direction, becoming the most widely used desktop OS for most of the following decade.",
   screenshots:[], logo:"windows",
-  sourceLinks:[{name:"Wikipedia — Windows 10", url:"https://en.wikipedia.org/wiki/Windows_10"}],
-  tags:["windows","nt","microsoft","2010s","iconic"]
+  sourceLinks:[{name:"Wikipedia — Windows 10", url:"https://en.wikipedia.org/wiki/Windows_10"},{name:"Wikipedia — Windows 10 version history", url:"https://en.wikipedia.org/wiki/Windows_10_version_history"}],
+  tags:["windows","nt","microsoft","2010s","iconic"],
+  releases:[
+    { version:"1507 (original release)", codename:"Threshold 1", build:"10.0.10240", date:"July 29, 2015", status:"End of servicing", notes:"First release of Windows 10; retroactively numbered 1507. Reintroduced the Start menu and added Cortana, Edge, and Windows Hello." },
+    { version:"1511 (November Update)", codename:"Threshold 2", build:"10.0.10586", date:"November 12, 2015", status:"End of servicing", notes:"First major update; added Start menu tile folders and Windows Store for Business." },
+    { version:"1607 (Anniversary Update)", codename:"Redstone 1", build:"10.0.14393", date:"August 2, 2016", status:"End of servicing", notes:"First of the four 'Redstone' updates; introduced Windows Ink and expanded Cortana integration." },
+    { version:"1703 (Creators Update)", codename:"Redstone 2", build:"10.0.15063", date:"April 11, 2017", status:"End of servicing", notes:"Added Night Light, Windows Mixed Reality support, and Paint 3D." },
+    { version:"1709 (Fall Creators Update)", codename:"Redstone 3", build:"10.0.16299", date:"October 17, 2017", status:"End of servicing", notes:"Introduced OneDrive Files On-Demand and the Fluent Design System." },
+    { version:"1803 (April 2018 Update)", codename:"Redstone 4", build:"10.0.17134", date:"April 30, 2018", status:"End of servicing", notes:"Added Timeline for switching between recent activities across devices." },
+    { version:"1809 (October 2018 Update)", codename:"Redstone 5", build:"10.0.17763", date:"November 13, 2018", status:"End of servicing", notes:"Re-released after a data-loss bug delayed the original October rollout; added dark theme for File Explorer." },
+    { version:"1903 (May 2019 Update)", codename:"19H1", build:"10.0.18362", date:"May 21, 2019", status:"End of servicing", notes:"First release under the new 'YYHX' naming scheme, replacing Redstone codenames; separated search from Cortana." },
+    { version:"1909 (November 2019 Update)", codename:"19H2", build:"10.0.18363", date:"November 12, 2019", status:"End of servicing", notes:"Delivered as a smaller enablement-package update layered on the 1903 platform." },
+    { version:"2004 (May 2020 Update)", codename:"20H1", build:"10.0.19041", date:"May 27, 2020", status:"End of servicing", notes:"Added Windows Subsystem for Linux 2 (WSL2) and a redesigned Cortana app." },
+    { version:"20H2 (October 2020 Update)", codename:"20H2", build:"10.0.19042", date:"October 20, 2020", status:"End of servicing", notes:"Also shipped as an enablement package; introduced the redesigned Start menu with translucent tiles." },
+    { version:"21H1 (May 2021 Update)", codename:"21H1", build:"10.0.19043", date:"May 18, 2021", status:"End of servicing", notes:"Added Windows Hello multi-camera support and expanded WSL/WPF/WinUI improvements." },
+    { version:"21H2 (November 2021 Update)", codename:"21H2", build:"10.0.19044", date:"November 16, 2021", status:"End of servicing", notes:"Added hardware-based security features (GPU Compute support in WSL, WPA3 H2E)." },
+    { version:"22H2 (2022 Update, final)", codename:"22H2", build:"10.0.19045", date:"October 18, 2022", status:"End of support (October 14, 2025)", notes:"Final feature update for Windows 10; received only security servicing afterward until end of support." }
+  ]
 },
 {
-  id:"win-11", name:"Windows 11", family:"Windows", version:"NT 10.0 (21H2)",
+  id:"win-11", name:"Windows 11", family:"Windows", version:"NT 10.0",
   releaseDate:"October 5, 2021", releaseYear:2021, developer:"Microsoft",
   publisher:"Microsoft", platform:"x86 / x64 / ARM", architecture:"64-bit / ARM64",
   deviceType:"Desktop", category:"Operating System", kernel:"Windows NT kernel",
   interface:"Graphical", desktopEnvironment:"Windows Explorer shell + centered Start menu",
-  predecessor:"Windows 10", successor:"Windows 11 24H2", status:"Current",
-  description:"Windows 11 introduced a redesigned, rounded interface with a centered taskbar and Start menu, tighter Android app integration via the Amazon Appstore (later discontinued), and stricter hardware requirements including TPM 2.0.",
+  predecessor:"Windows 10", successor:null, status:"Current",
+  description:"Windows 11 introduced a redesigned, rounded interface with a centered taskbar and Start menu, tighter Android app integration via the Amazon Appstore (later discontinued), and stricter hardware requirements including TPM 2.0. It is developed on an annual feature-update cadence, each release identified by a year/half-year label (e.g. 24H2) and, internally, a development codename.",
   majorFeatures:["Centered Start menu and taskbar","Snap Layouts for window management","TPM 2.0 and Secure Boot hardware requirements","Widgets panel and redesigned Microsoft Store"],
-  interestingFacts:["Windows 11's TPM 2.0 requirement excluded many otherwise capable older PCs from officially supported upgrades.","It was unveiled in June 2021, shortly after Microsoft signaled Windows 10 would be 'the last version of Windows,' a statement it later revised."],
-  historicalImportance:"Windows 11 marked a visual and security-policy reset for Windows, tightening hardware requirements for the first time in years.",
+  interestingFacts:["Windows 11's TPM 2.0 requirement excluded many otherwise capable older PCs from officially supported upgrades.","It was unveiled in June 2021, shortly after Microsoft signaled Windows 10 would be 'the last version of Windows,' a statement it later revised.","Every Windows 11 feature update shares the internal 'Valley' codename family — Sun Valley for the original release, Hudson Valley from 24H2 onward."],
+  historicalImportance:"Windows 11 marked a visual and security-policy reset for Windows, tightening hardware requirements for the first time in years, and formalized Microsoft's shift to annual, codenamed feature-update branches.",
   screenshots:[], logo:"windows",
-  sourceLinks:[{name:"Wikipedia — Windows 11", url:"https://en.wikipedia.org/wiki/Windows_11"}],
-  tags:["windows","nt","microsoft","2020s","current"]
-},
-{
-  id:"win-11-24h2", name:"Windows 11", family:"Windows", version:"24H2",
-  releaseDate:"October 1, 2024", releaseYear:2024, developer:"Microsoft",
-  publisher:"Microsoft", platform:"x86 / x64 / ARM", architecture:"64-bit / ARM64",
-  deviceType:"Desktop", category:"Operating System", kernel:"Windows NT kernel",
-  interface:"Graphical", desktopEnvironment:"Windows Explorer shell + centered Start menu",
-  predecessor:"Windows 11 23H2", successor:"Windows 11 25H2", status:"Current",
-  description:"Windows 11 version 24H2 was a major annual feature update bringing a new underlying platform build, Wi-Fi 7 support, expanded File Explorer capabilities, and the on-device Copilot+ PC features on supported hardware.",
-  majorFeatures:["Copilot+ PC features on supported NPUs","Sudo command for Windows","Wi-Fi 7 support","Updated File Explorer and energy saver improvements"],
-  interestingFacts:["24H2 shifted to a new servicing branch, with 25H2 later shipping as a lightweight enablement package on the same underlying build."],
-  historicalImportance:"24H2 introduced the Copilot+ PC hardware category, tying Windows feature updates to on-device AI acceleration for the first time.",
-  screenshots:[], logo:"windows",
-  sourceLinks:[{name:"Wikipedia — Windows 11 version 24H2", url:"https://en.wikipedia.org/wiki/Windows_11,_version_24H2"}],
-  tags:["windows","nt","microsoft","2020s","current"]
-},
-{
-  id:"win-11-25h2", name:"Windows 11", family:"Windows", version:"25H2",
-  releaseDate:"September 30, 2025", releaseYear:2025, developer:"Microsoft",
-  publisher:"Microsoft", platform:"x86 / x64 / ARM", architecture:"64-bit / ARM64",
-  deviceType:"Desktop", category:"Operating System", kernel:"Windows NT kernel",
-  interface:"Graphical", desktopEnvironment:"Windows Explorer shell + centered Start menu",
-  predecessor:"Windows 11 24H2", successor:"Future / Unverified", status:"Current",
-  description:"Windows 11, version 25H2 is the fourth annual feature update to Windows 11, shipped as a lightweight enablement package on the same servicing branch as 24H2, with Start menu refinements and administrative controls for removing pre-installed Store apps.",
-  majorFeatures:["Enablement-package rollout on the 24H2 platform","Refreshed Start menu layout options","Admin controls to remove pre-installed Store apps","Removal of legacy components such as PowerShell 2.0 and WMIC"],
-  interestingFacts:["Because it shares its core build with 24H2, upgrading from 24H2 to 25H2 behaves like installing a routine monthly update rather than a full OS upgrade."],
-  historicalImportance:"25H2 reflects Microsoft's shift toward incremental, low-friction annual updates rather than ground-up yearly rebuilds.",
-  screenshots:[], logo:"windows",
-  sourceLinks:[{name:"Wikipedia — Windows 11, version 25H2", url:"https://en.wikipedia.org/wiki/Windows_11,_version_25H2"}],
-  tags:["windows","nt","microsoft","2020s","current"]
+  sourceLinks:[{name:"Wikipedia — Windows 11", url:"https://en.wikipedia.org/wiki/Windows_11"},{name:"Wikipedia — Windows 11 version history", url:"https://en.wikipedia.org/wiki/Windows_11_version_history"}],
+  tags:["windows","nt","microsoft","2020s","current"],
+  releases:[
+    { version:"21H2 (original release)", codename:"Sun Valley", build:"10.0.22000", date:"October 5, 2021", status:"Superseded", notes:"First public release of Windows 11; introduced the Fluent-Design-based rounded interface, centered Start menu, and Mica material." },
+    { version:"22H2 (2022 Update)", codename:"Sun Valley 2", build:"10.0.22621", date:"September 20, 2022", status:"End of servicing (Oct 8, 2024)", notes:"First annual feature update; added tabbed File Explorer, Start menu folders, and initial third-party widget support." },
+    { version:"23H2 (2023 Update)", codename:"Sun Valley 3", build:"10.0.22631", date:"October 31, 2023", status:"Superseded", notes:"Shipped as an enablement package on the 22621 build; introduced Copilot in Windows and further taskbar refinements." },
+    { version:"24H2 (2024 Update)", codename:"Hudson Valley", build:"10.0.26100", date:"October 1, 2024", status:"Superseded", notes:"New underlying platform build; introduced Copilot+ PC on-device AI features (on supported NPUs), Wi-Fi 7 support, and the 'sudo' command." },
+    { version:"25H2 (2025 Update)", codename:"Hudson Valley 2", build:"10.0.26200", date:"September 30, 2025", status:"Current", notes:"Shipped as a lightweight enablement package on the 24H2 platform, with Start menu refinements and removal of legacy components (PowerShell 2.0, WMIC)." },
+    { version:"26H1", codename:"—", build:"10.0.28000 (Insider)", date:"In development", status:"Insider preview only — not yet a public release", notes:"First previewed to Windows Insiders on the Canary Channel in November 2025; not yet confirmed as a final public build at time of writing." }
+  ]
 },
 
 /* ===================== APPLE / MAC ===================== */
@@ -1257,34 +1251,82 @@ const OS_DATA = [
   tags:["mobile","enterprise","2000s"]
 },
 {
-  id:"ios-1", name:"iPhone OS", family:"Mobile", version:"1.0",
+  id:"ios", name:"iOS", family:"Mobile", version:"iPhone OS 1 – iOS 26",
   releaseDate:"June 29, 2007", releaseYear:2007, developer:"Apple",
-  publisher:"Apple", platform:"iPhone", architecture:"ARM",
+  publisher:"Apple", platform:"iPhone (later iPad via iPadOS)", architecture:"ARM",
   deviceType:"Mobile", category:"Mobile OS", kernel:"XNU (Mach + BSD hybrid, shared with macOS)",
   interface:"Graphical (multi-touch)", desktopEnvironment:"SpringBoard",
-  predecessor:"Derived from Mac OS X foundations", successor:"iOS 4 (name change)", status:"Active (as iOS)",
-  description:"iPhone OS, later renamed iOS, launched with the original iPhone and introduced true multi-touch gestures as the primary means of interacting with a mobile operating system, built on the same XNU kernel as Mac OS X.",
-  majorFeatures:["Multi-touch gesture interface (pinch-to-zoom, swipe)","SpringBoard home screen with app icon grid","Shared XNU/Darwin kernel lineage with Mac OS X"],
-  interestingFacts:["The original iPhone OS had no official third-party App Store; that arrived a year later with iPhone OS 2 in July 2008.","Apple renamed 'iPhone OS' to 'iOS' starting with version 4 in 2010, after licensing the name from Cisco, which had used it for router software."],
-  historicalImportance:"iPhone OS/iOS redefined mobile computing around multi-touch, direct-manipulation interfaces, triggering the broader smartphone revolution.",
+  predecessor:"Derived from Mac OS X foundations", successor:null, status:"Active",
+  description:"iOS, originally named iPhone OS, launched with the original iPhone and introduced true multi-touch gestures as the primary means of interacting with a mobile operating system, built on the same XNU kernel as Mac OS X. It has shipped one major version per year since 2008, renamed from 'iPhone OS' to 'iOS' at version 4, and later renumbered from 18 straight to 26 to align with Apple's other platforms.",
+  majorFeatures:["Multi-touch gesture interface (pinch-to-zoom, swipe)","SpringBoard home screen with app icon grid","Shared XNU/Darwin kernel lineage with Mac OS X","Annual major version releases each September, tied to new iPhone launches"],
+  interestingFacts:["The original iPhone OS had no official third-party App Store; that arrived a year later with iPhone OS 2 in July 2008.","Apple renamed 'iPhone OS' to 'iOS' starting with version 4 in 2010, after licensing the name from Cisco, which had used it for router software.","In 2025 Apple skipped version numbers 19 through 25 entirely, jumping from iOS 18 straight to iOS 26 so the number would match the software's primary year of use across all its platforms."],
+  historicalImportance:"iPhone OS/iOS redefined mobile computing around multi-touch, direct-manipulation interfaces, triggering the broader smartphone revolution and the app-store distribution model most platforms use today.",
   screenshots:[], logo:"ios",
-  sourceLinks:[{name:"Wikipedia — IOS version history", url:"https://en.wikipedia.org/wiki/IOS_version_history"}],
-  tags:["mobile","apple","2000s","iconic","touch"]
+  sourceLinks:[{name:"Wikipedia — IOS version history", url:"https://en.wikipedia.org/wiki/IOS_version_history"},{name:"Wikipedia — iOS 26", url:"https://en.wikipedia.org/wiki/IOS_26"}],
+  tags:["mobile","apple","2000s","iconic","touch"],
+  releases:[
+    { version:"iPhone OS 1", codename:"—", build:"1A543a", date:"June 29, 2007", status:"Superseded", notes:"Original release with the first iPhone. No third-party App Store or copy/paste." },
+    { version:"iPhone OS 2", codename:"—", build:"5G77", date:"July 11, 2008", status:"Superseded", notes:"Introduced the App Store and third-party native applications." },
+    { version:"iPhone OS 3", codename:"—", build:"7A341", date:"June 17, 2009", status:"Superseded", notes:"Added copy/paste, MMS, and Spotlight search." },
+    { version:"iOS 4", codename:"—", build:"8A293", date:"June 21, 2010", status:"Superseded", notes:"Renamed from 'iPhone OS' to 'iOS'; introduced multitasking and FaceTime." },
+    { version:"iOS 5", codename:"—", build:"9A334", date:"October 12, 2011", status:"Superseded", notes:"Introduced Siri and iCloud, and untethered the iPhone from requiring a computer for setup." },
+    { version:"iOS 6", codename:"—", build:"10A403", date:"September 19, 2012", status:"Superseded", notes:"Replaced Google Maps with Apple's own Maps app." },
+    { version:"iOS 7", codename:"—", build:"11A465", date:"September 18, 2013", status:"Superseded", notes:"Major visual redesign away from skeuomorphism toward a flat design language, plus Control Center." },
+    { version:"iOS 8", codename:"—", build:"12A366", date:"September 17, 2014", status:"Superseded", notes:"Introduced HealthKit, HomeKit, and third-party keyboard support." },
+    { version:"iOS 9", codename:"—", build:"13A344", date:"September 16, 2015", status:"Superseded", notes:"Added Split View multitasking on iPad and proactive Siri suggestions." },
+    { version:"iOS 10", codename:"—", build:"14A346", date:"September 13, 2016", status:"Superseded", notes:"Redesigned Lock Screen and Messages with rich effects; opened Siri to third-party apps." },
+    { version:"iOS 11", codename:"—", build:"15A372", date:"September 19, 2017", status:"Superseded", notes:"Introduced Files app and ARKit augmented-reality framework." },
+    { version:"iOS 12", codename:"—", build:"16A366", date:"September 17, 2018", status:"Superseded", notes:"Focused on performance improvements for older devices, plus Screen Time and Group FaceTime." },
+    { version:"iOS 13", codename:"—", build:"17A577", date:"September 19, 2019", status:"Superseded", notes:"Added system-wide Dark Mode and split iPad support into the separate iPadOS." },
+    { version:"iOS 14", codename:"—", build:"18A373", date:"September 16, 2020", status:"Superseded", notes:"Introduced Home Screen widgets and the App Library." },
+    { version:"iOS 15", codename:"—", build:"19A346", date:"September 20, 2021", status:"Superseded", notes:"Added Focus modes and redesigned notifications." },
+    { version:"iOS 16", codename:"—", build:"20A362", date:"September 12, 2022", status:"Superseded", notes:"Introduced the customizable Lock Screen." },
+    { version:"iOS 17", codename:"—", build:"21A326", date:"September 18, 2023", status:"Superseded", notes:"Added StandBy mode and Contact Posters." },
+    { version:"iOS 18", codename:"—", build:"22A3354", date:"September 16, 2024", status:"Superseded", notes:"Launched the initial Apple Intelligence feature rollout and Home Screen icon customization." },
+    { version:"iOS 26", codename:"Luck", build:"23A341", date:"September 15, 2025", status:"Current", notes:"Skipped numbers 19–25 to align version numbering with the 2025–26 platform year across all Apple OSes; introduced the 'Liquid Glass' interface redesign." },
+    { version:"iOS 27", codename:"—", build:"Beta", date:"In beta", status:"Developer beta — not yet publicly released", notes:"Announced for the 2026 cycle; only beta builds have shipped to developers at time of writing, so feature details are not yet finalized for this archive." }
+  ]
 },
 {
-  id:"android-1", name:"Android", family:"Mobile", version:"1.0",
+  id:"android", name:"Android", family:"Mobile", version:"1.0 – 16",
   releaseDate:"September 23, 2008", releaseYear:2008, developer:"Android Inc. (Google, from 2005 acquisition)",
   publisher:"Google", platform:"Smartphones and beyond", architecture:"ARM / x86 / others",
   deviceType:"Mobile", category:"Mobile OS", kernel:"Linux (modified)",
   interface:"Graphical (multi-touch)", desktopEnvironment:"Android home screen launcher",
   predecessor:null, successor:null, status:"Active",
-  description:"Android, built on a modified Linux kernel and open-sourced by Google under the Open Handset Alliance, debuted on the HTC Dream (T-Mobile G1) and grew to become the world's most widely used operating system across smartphones, tablets and beyond.",
-  majorFeatures:["Open-source Linux-based mobile platform (AOSP)","Deep Google services integration (from early versions)","Broad manufacturer and carrier customization ecosystem"],
-  interestingFacts:["Google acquired the small startup Android Inc. in 2005, years before the platform's public 2008 debut.","Android's release naming historically followed a dessert theme (Cupcake, Donut, Eclair, and so on) through Android 9 Pie, before switching to plain version numbers."],
+  description:"Android, built on a modified Linux kernel and open-sourced by Google under the Open Handset Alliance, debuted on the HTC Dream (T-Mobile G1) and grew to become the world's most widely used operating system across smartphones, tablets and beyond. Early versions used dessert-themed codenames publicly; Google dropped that convention after Android 9 Pie in favor of plain version numbers.",
+  majorFeatures:["Open-source Linux-based mobile platform (AOSP)","Deep Google services integration (from early versions)","Broad manufacturer and carrier customization ecosystem","Annual major version releases with quarterly feature drops since Android 14"],
+  interestingFacts:["Google acquired the small startup Android Inc. in 2005, years before the platform's public 2008 debut.","Android's release naming historically followed a dessert theme (Cupcake, Donut, Eclair, and so on) through Android 9 Pie, before switching to plain version numbers.","Starting with Android 14, internal build codenames still quietly follow the dessert alphabet (e.g. Android 16 was internally 'Baklava')."],
   historicalImportance:"Android's open licensing model made it the dominant operating system by device count worldwide, running on billions of phones, tablets and other devices.",
   screenshots:[], logo:"android",
-  sourceLinks:[{name:"Wikipedia — Android version history", url:"https://en.wikipedia.org/wiki/Android_version_history"}],
-  tags:["mobile","linux-based","google","2000s","iconic"]
+  sourceLinks:[{name:"Wikipedia — Android version history", url:"https://en.wikipedia.org/wiki/Android_version_history"},{name:"Wikipedia — Android 16", url:"https://en.wikipedia.org/wiki/Android_16"}],
+  tags:["mobile","linux-based","google","2000s","iconic"],
+  releases:[
+    { version:"1.0", codename:"(unofficial: Astro)", build:"API 1", date:"September 23, 2008", status:"Superseded", notes:"First public release, shipped on the HTC Dream / T-Mobile G1." },
+    { version:"1.1", codename:"(unofficial: Petit Four)", build:"API 2", date:"February 9, 2009", status:"Superseded", notes:"Minor bugfix and API update." },
+    { version:"1.5", codename:"Cupcake", build:"API 3", date:"April 27, 2009", status:"Superseded", notes:"First officially dessert-named release; added on-screen keyboard and widgets." },
+    { version:"1.6", codename:"Donut", build:"API 4", date:"September 15, 2009", status:"Superseded", notes:"Added support for varying screen resolutions and the Quick Search Box." },
+    { version:"2.0–2.1", codename:"Eclair", build:"API 5–7", date:"October 26, 2009", status:"Superseded", notes:"Introduced Google Maps Navigation and live wallpapers." },
+    { version:"2.2", codename:"Froyo", build:"API 8", date:"May 20, 2010", status:"Superseded", notes:"Added USB tethering, Wi-Fi hotspot support, and Adobe Flash support." },
+    { version:"2.3", codename:"Gingerbread", build:"API 9–10", date:"December 6, 2010", status:"Superseded", notes:"Refreshed UI with a black/green theme; added NFC support." },
+    { version:"3.0–3.2", codename:"Honeycomb", build:"API 11–13", date:"February 22, 2011", status:"Superseded", notes:"Tablet-only release with a redesigned holographic interface." },
+    { version:"4.0", codename:"Ice Cream Sandwich", build:"API 14–15", date:"October 18, 2011", status:"Superseded", notes:"Unified the phone and tablet interfaces into one release for the first time." },
+    { version:"4.1–4.3", codename:"Jelly Bean", build:"API 16–18", date:"July 9, 2012", status:"Superseded", notes:"Introduced Google Now and Project Butter performance smoothing." },
+    { version:"4.4", codename:"KitKat", build:"API 19", date:"October 31, 2013", status:"Superseded", notes:"Optimized Android to run on lower-memory devices; introduced the immersive full-screen mode." },
+    { version:"5.0–5.1", codename:"Lollipop", build:"API 21–22", date:"November 12, 2014", status:"Superseded", notes:"Introduced Material Design and the ART runtime as default." },
+    { version:"6.0", codename:"Marshmallow", build:"API 23", date:"October 5, 2015", status:"Superseded", notes:"Added runtime app permissions and Doze battery-saving mode." },
+    { version:"7.0–7.1", codename:"Nougat", build:"API 24–25", date:"August 22, 2016", status:"Superseded", notes:"Added split-screen multitasking and the Vulkan graphics API." },
+    { version:"8.0–8.1", codename:"Oreo", build:"API 26–27", date:"August 21, 2017", status:"Superseded", notes:"Introduced picture-in-picture mode and notification channels." },
+    { version:"9", codename:"Pie", build:"API 28", date:"August 6, 2018", status:"Superseded", notes:"Last dessert-named public release; introduced gesture navigation and Adaptive Battery." },
+    { version:"10", codename:"(internal: Quince Tart)", build:"API 29", date:"September 3, 2019", status:"Superseded", notes:"First release with a plain number as the public name; added system-wide Dark Theme." },
+    { version:"11", codename:"(internal: Red Velvet Cake)", build:"API 30", date:"September 8, 2020", status:"Superseded", notes:"Introduced chat bubbles and one-time permission grants." },
+    { version:"12", codename:"(internal: Snow Cone)", build:"API 31–32", date:"October 4, 2021", status:"Superseded", notes:"Introduced Material You dynamic theming." },
+    { version:"13", codename:"(internal: Tiramisu)", build:"API 33", date:"August 15, 2022", status:"Superseded", notes:"Added per-app language settings and themed app icons." },
+    { version:"14", codename:"(internal: Upside Down Cake)", build:"API 34", date:"October 4, 2023", status:"Superseded", notes:"Added lock-screen customization and health-connect improvements." },
+    { version:"15", codename:"(internal: Vanilla Ice Cream)", build:"API 35", date:"September 3, 2024", status:"Superseded", notes:"Added Private Space for hiding sensitive apps." },
+    { version:"16", codename:"(internal: Baklava)", build:"API 36", date:"June 10, 2025", status:"Current", notes:"Moved to a trunk-based quarterly release cadence; added Live Updates and desktop-style windowing on large screens." },
+    { version:"17", codename:"Cinnamon Bun", build:"Beta", date:"In beta", status:"Public beta — not yet a stable release", notes:"Beta builds began rolling out to Pixel devices in mid-2026; not yet finalized, so feature details are not included in this archive." }
+  ]
 },
 {
   id:"webos-1", name:"webOS", family:"Mobile", version:"1.0",
@@ -1409,9 +1451,265 @@ const OS_DATA = [
   screenshots:[], logo:"vms",
   sourceLinks:[{name:"Wikipedia — OpenVMS", url:"https://en.wikipedia.org/wiki/OpenVMS"}],
   tags:["server","historical","1970s"]
+},
+
+/* ===================== WINDOWS MOBILE HISTORY ===================== */
+/* Windows CE, Windows Mobile, Windows Phone, and Windows 10 Mobile are
+   related but distinct products — kept as their own family (rather than
+   folded into desktop "Windows" or generic "Mobile") so the lineage stays
+   clear without cluttering either of those families. */
+{
+  id:"win-pocketpc", name:"Windows Pocket PC", family:"Windows Mobile", version:"2000 / 2002",
+  releaseDate:"April 19, 2000", releaseYear:2000, developer:"Microsoft",
+  publisher:"Microsoft", platform:"Pocket PC PDA devices", architecture:"ARM / MIPS / SH-3 (varied)",
+  deviceType:"Mobile", category:"Mobile OS", kernel:"Windows CE 3.0",
+  interface:"Graphical (stylus, touchscreen)", desktopEnvironment:"Pocket PC shell",
+  predecessor:"Windows CE (Handheld PC editions)", successor:"Windows Mobile 2003", status:"Discontinued",
+  description:"Windows Pocket PC was Microsoft's branded software platform for PDA-class handheld devices, built on the Windows CE 3.0 kernel. It is distinct from Windows CE itself, which is the underlying real-time operating system Pocket PC (and later Windows Mobile) was built on top of.",
+  majorFeatures:["Stylus-driven touchscreen interface modeled loosely on desktop Windows","Pocket versions of Word, Excel, and Internet Explorer","ActiveSync for syncing with a desktop PC"],
+  interestingFacts:["Windows CE dates back to 1996 and has been used far beyond PDAs, including industrial and embedded devices — Pocket PC was just one product built on top of it.","Windows Pocket PC was renamed 'Windows Mobile' starting with the 2003 release, which is why the two names are sometimes used interchangeably even though they refer to different product eras."],
+  historicalImportance:"Pocket PC established the touchscreen PDA interaction patterns Microsoft carried forward into Windows Mobile and, indirectly, that competitors like Palm OS also raced against.",
+  screenshots:[], logo:"windows",
+  sourceLinks:[{name:"Wikipedia — Windows Mobile", url:"https://en.wikipedia.org/wiki/Windows_Mobile"},{name:"Wikipedia — Windows CE", url:"https://en.wikipedia.org/wiki/Windows_CE"}],
+  tags:["windows-mobile-history","pda","2000s","windows-ce"],
+  releases:[
+    { version:"Pocket PC 2000", codename:"Rapier", build:"Windows CE 3.0", date:"April 19, 2000", status:"End of support (September 10, 2007)", notes:"Original release; ran on ARM, MIPS and SH-3 processors depending on device manufacturer." },
+    { version:"Pocket PC 2002", codename:"Merlin", build:"Windows CE 3.0", date:"October 4, 2001", status:"End of support (October 14, 2008)", notes:"Standardized on ARM processors; added a Windows XP-style visual theme and improved Pocket Internet Explorer." }
+  ]
+},
+{
+  id:"win-mobile", name:"Windows Mobile", family:"Windows Mobile", version:"2003 – 6.5",
+  releaseDate:"June 23, 2003", releaseYear:2003, developer:"Microsoft",
+  publisher:"Microsoft", platform:"Smartphones and Pocket PC-class devices", architecture:"ARM",
+  deviceType:"Mobile", category:"Mobile OS", kernel:"Windows CE (4.2 – 5.2, varied by release)",
+  interface:"Graphical (stylus, later touch)", desktopEnvironment:"Windows Mobile Today screen / Start menu",
+  predecessor:"Windows Pocket PC", successor:"Windows Phone", status:"Discontinued",
+  description:"Windows Mobile was the rebranded, expanded successor to Pocket PC, extending Microsoft's handheld platform to smartphones with a Start-menu-style interface, and remained Microsoft's primary mobile OS until it was replaced outright by the touch-first Windows Phone in 2010.",
+  majorFeatures:["Start menu-style navigation echoing desktop Windows","Full Office Mobile suite (Word, Excel, PowerPoint, Outlook)","Broad OEM and enterprise device ecosystem"],
+  interestingFacts:["A planned 'Windows Mobile 7' was in development but was cancelled and effectively replaced by the ground-up rebuild that became Windows Phone 7.","Windows Mobile devices commonly required a stylus even after competitors moved to finger-driven touch interfaces, a design choice that aged poorly against the iPhone."],
+  historicalImportance:"Windows Mobile held meaningful enterprise smartphone market share through the mid-2000s before losing ground rapidly once touch-first iOS and Android arrived.",
+  screenshots:[], logo:"windows",
+  sourceLinks:[{name:"Wikipedia — Windows Mobile", url:"https://en.wikipedia.org/wiki/Windows_Mobile"}],
+  tags:["windows-mobile-history","mobile","2000s","windows-ce"],
+  releases:[
+    { version:"Windows Mobile 2003", codename:"Ozone", build:"Windows CE 4.2", date:"June 23, 2003", status:"End of support (July 8, 2014)", notes:"First release under the 'Windows Mobile' name, replacing 'Pocket PC 2002'." },
+    { version:"Windows Mobile 5.0", codename:"Magneto", build:"Windows CE 5.1", date:"May 9, 2005", status:"End of support (October 13, 2015)", notes:"Added persistent storage (reducing data loss on battery death) and bundled Office Mobile." },
+    { version:"Windows Mobile 6.0", codename:"Crossbow", build:"Windows CE 5.2", date:"February 12, 2007", status:"End of support (January 8, 2013)", notes:"Aligned its visual style more closely with Windows Vista; split into Standard, Professional and Classic editions." },
+    { version:"Windows Mobile 6.1", codename:"—", build:"Windows CE 5.2", date:"April 1, 2008", status:"Superseded", notes:"Incremental update improving the Today screen and threaded text messaging." },
+    { version:"Windows Mobile 6.5", codename:"—", build:"Windows CE 5.2", date:"May 11, 2009", status:"Superseded (last Windows Mobile release)", notes:"Added a finger-friendlier honeycomb Start menu and the Windows Marketplace for Mobile app store, an attempt to catch up with iOS/Android that came late." },
+    { version:"Windows Mobile 7", codename:"Photon", build:"—", date:"Cancelled", status:"Cancelled — never released", notes:"Planned next-generation release; cancelled and its work redirected into the ground-up rebuild that shipped as Windows Phone 7 instead." }
+  ]
+},
+{
+  id:"win-phone", name:"Windows Phone", family:"Windows Mobile", version:"7 – 8.1",
+  releaseDate:"October 21, 2010", releaseYear:2010, developer:"Microsoft",
+  publisher:"Microsoft", platform:"Smartphones", architecture:"ARM",
+  deviceType:"Mobile", category:"Mobile OS", kernel:"Windows CE 6.0 (WP7) / Windows 8 NT kernel (WP8+)",
+  interface:"Graphical (multi-touch, Metro tiles)", desktopEnvironment:"Start screen (Live Tiles)",
+  predecessor:"Windows Mobile", successor:"Windows 10 Mobile", status:"Discontinued",
+  description:"Windows Phone was a ground-up rebuild of Microsoft's mobile OS, abandoning Windows Mobile's stylus-driven interface entirely in favor of a touch-first 'Metro' design built around animated Live Tiles. Windows Phone 8 switched its underlying kernel from Windows CE to the same NT-derived kernel as desktop Windows 8.",
+  majorFeatures:["Live Tiles Start screen replacing traditional app-icon grids","Deep, mandatory integration with Microsoft account, Office and Xbox Live","Consistent hardware requirements enforced across all OEM devices"],
+  interestingFacts:["Windows Phone 7 could not run any pre-existing Windows Mobile applications — it was a complete break, not an upgrade path.","Windows Phone 8 switched its kernel from Windows CE to the Windows NT kernel shared with desktop Windows 8, which is why WP7 devices could not be upgraded to WP8."],
+  historicalImportance:"Windows Phone's tile-based design language directly shaped the Start screen Microsoft brought to Windows 8, even though the phone platform itself never gained significant market share against iOS and Android.",
+  screenshots:[], logo:"windows",
+  sourceLinks:[{name:"Wikipedia — Windows Phone", url:"https://en.wikipedia.org/wiki/Windows_Phone"}],
+  tags:["windows-mobile-history","mobile","2010s"],
+  releases:[
+    { version:"Windows Phone 7", codename:"Photon / Metro", build:"7.0", date:"October 21, 2010", status:"End of support (October 14, 2014)", notes:"Complete ground-up rebuild; introduced the Metro design language and Live Tiles." },
+    { version:"Windows Phone 7.5", codename:"Mango", build:"7.10", date:"September 27, 2011", status:"Superseded", notes:"Added multitasking and deeper Twitter/LinkedIn/Facebook integration." },
+    { version:"Windows Phone 7.8", codename:"—", build:"7.10.8862", date:"January 31, 2013", status:"Superseded", notes:"Backported the Windows Phone 8 Start screen to WP7-generation hardware that couldn't run WP8 itself." },
+    { version:"Windows Phone 8", codename:"Apollo", build:"8.0", date:"October 29, 2012", status:"End of support (July 8, 2014)", notes:"Switched the underlying kernel to the Windows NT kernel shared with desktop Windows 8; broke compatibility with WP7 devices." },
+    { version:"Windows Phone 8.1", codename:"Blue", build:"8.10", date:"April 14, 2014 (developer); July 2014 (rollout)", status:"End of support (July 11, 2017)", notes:"Introduced the Cortana voice assistant and Action Center notification panel." }
+  ]
+},
+{
+  id:"win-10-mobile", name:"Windows 10 Mobile", family:"Windows Mobile", version:"1511 – 1709",
+  releaseDate:"November 20, 2015", releaseYear:2015, developer:"Microsoft",
+  publisher:"Microsoft", platform:"Smartphones", architecture:"ARM",
+  deviceType:"Mobile", category:"Mobile OS", kernel:"Windows NT kernel (shared core with desktop Windows 10)",
+  interface:"Graphical (multi-touch, Live Tiles)", desktopEnvironment:"Start screen (Live Tiles)",
+  predecessor:"Windows Phone 8.1", successor:null, status:"Discontinued (end of support December 10, 2019)",
+  description:"Windows 10 Mobile shared its underlying NT-based core and 'Universal Windows Platform' app model with desktop Windows 10, positioned as part of Microsoft's 'one Windows' strategy — but it remained its own distinct release with its own build and update schedule, and was ultimately discontinued rather than continued as a standalone product line.",
+  majorFeatures:["Universal Windows Platform apps shared with desktop Windows 10","Continuum for Phone, allowing some devices to drive an external monitor like a desktop","Windows Hello and Cortana integration"],
+  interestingFacts:["Despite sharing branding and core technology with desktop Windows 10, Microsoft officially discontinued active development of Windows 10 Mobile in 2017, citing lack of market share and app support.","Windows 10 Mobile reached end of support on December 10, 2019, closing out the entire Windows-on-phone product line that began with Pocket PC in 2000."],
+  historicalImportance:"Windows 10 Mobile's discontinuation marked Microsoft's exit from the smartphone OS market it had helped pioneer nearly two decades earlier with Pocket PC.",
+  screenshots:[], logo:"windows",
+  sourceLinks:[{name:"Wikipedia — Windows 10 Mobile", url:"https://en.wikipedia.org/wiki/Windows_10_Mobile"},{name:"Wikipedia — Windows 10 Mobile version history", url:"https://en.wikipedia.org/wiki/Windows_10_Mobile_version_history"}],
+  tags:["windows-mobile-history","mobile","2010s"],
+  releases:[
+    { version:"1511 (original release)", codename:"Threshold 2", build:"10.0.10586", date:"November 20, 2015", status:"End of service (January 9, 2018)", notes:"First release; shared its Threshold 2 codename and build lineage with the desktop Windows 10 November Update." },
+    { version:"1607 (Anniversary Update)", codename:"Redstone 1", build:"10.0.14393", date:"August 16, 2016", status:"End of service", notes:"Brought the desktop Windows 10 Anniversary Update's features to phones, including Windows Ink." },
+    { version:"1703 (Creators Update)", codename:"Redstone 2", build:"10.0.15063", date:"April 25, 2017", status:"End of service (June 11, 2019)", notes:"Final feature update most devices received; Microsoft confirmed it was shifting to maintenance-only mode shortly after this release." },
+    { version:"1709 (Fall Creators Update)", codename:"Redstone 3", build:"10.0.15254", date:"October 2017", status:"Servicing-only (final build)", notes:"Security- and servicing-only release; no further feature updates followed before end of support in December 2019." }
+  ]
+},
+
+/* ===================== CAPABILITY-BASED SYSTEMS ===================== */
+/* These systems don't fit neatly into desktop/mobile/server categories —
+   their defining trait is a capability-based security model, where access
+   to any resource requires holding an explicit, unforgeable capability
+   token rather than relying on ambient permissions or user/group IDs. */
+{
+  id:"cap-cambridge", name:"Cambridge CAP Computer", family:"Capability-based", version:"CAP OS",
+  releaseDate:"1976", releaseYear:1976, developer:"University of Cambridge Computer Laboratory (M. Wilkes, R. Needham, D. Wheeler)",
+  publisher:"University of Cambridge", platform:"Custom CAP hardware", architecture:"32-bit capability-tagged memory",
+  deviceType:"Research", category:"Capability-based", kernel:"Capability-based (hardware + software)",
+  interface:"Command-line", desktopEnvironment:null, predecessor:null, successor:null, status:"Historical (research project concluded 1977)",
+  description:"The Cambridge CAP computer was the first successful experimental machine to demonstrate security capabilities implemented in both hardware and software together, rather than as a software layer alone. Its operating system was written almost entirely in ALGOL 68C.",
+  majorFeatures:["Hardware-enforced capability unit with 64 dedicated capability registers","Process-tree structure with a 'Master coordinator' root process","Memory segments could hold data or capabilities, never both at once"],
+  interestingFacts:["The CAP project ran from 1970 to 1977 under Maurice Wilkes and Roger Needham, with David Wheeler responsible for implementation.","Roger Needham received a British Computer Society Technical Award in 1978 for his work on the CAP project.","Despite being a research machine, CAP was also used as a genuine working file server for the Computer Laboratory."],
+  historicalImportance:"CAP was the first machine to prove hardware-supported capability-based security could work in a real, fully functional operating system rather than only in theory.",
+  screenshots:[], logo:"other",
+  sourceLinks:[{name:"Wikipedia — CAP computer", url:"https://en.wikipedia.org/wiki/CAP_computer"}],
+  tags:["capability-based","research","1970s"]
+},
+{
+  id:"cap-flex", name:"Flex Machine", family:"Capability-based", version:"Flex",
+  releaseDate:"late 1970s", releaseYear:1977, developer:"Michael Foster and Ian Currie, Royal Signals and Radar Establishment (RSRE)",
+  publisher:"Royal Signals and Radar Establishment", platform:"Custom microprogrammable hardware", architecture:"Tagged-storage capability architecture",
+  deviceType:"Research", category:"Capability-based", kernel:"Capability-based (custom microcode)",
+  interface:"Command-line", desktopEnvironment:null, predecessor:null, successor:null, status:"Historical",
+  description:"The Flex machine was developed at Britain's Royal Signals and Radar Establishment in Malvern during the late 1970s and 1980s. Its custom, microprogrammable hardware used a tagged-storage scheme to implement a capability architecture, with its entire operating system, compiler, editor and filing system written in ALGOL 68RS.",
+  majorFeatures:["Tagged-storage hardware capability architecture","Entire OS, compiler, editor and filesystem written in one language (ALGOL 68RS)","Designed specifically for safe, efficient execution of strongly typed procedures"],
+  interestingFacts:["There were at least two distinct hardware incarnations of Flex, both built around writable microcode.","Flex's design goal — safety through strong typing enforced at the hardware level — anticipated ideas that resurfaced decades later in capability-based research systems like EROS."],
+  historicalImportance:"Flex is a notable British example of hardware/software co-design for capability security, built independently of the better-known Cambridge CAP project.",
+  screenshots:[], logo:"other",
+  sourceLinks:[{name:"Wikipedia — Flex machine", url:"https://en.wikipedia.org/wiki/Flex_machine"}],
+  tags:["capability-based","research","1970s","1980s"]
+},
+{
+  id:"cap-hydra", name:"HYDRA", family:"Capability-based", version:"HYDRA",
+  releaseDate:"1971 (project start)", releaseYear:1971, developer:"Carnegie Mellon University",
+  publisher:"Carnegie Mellon University", platform:"C.mmp multiprocessor", architecture:"Multiprocessor (PDP-11-based C.mmp)",
+  deviceType:"Research", category:"Capability-based", kernel:"Object-based capability kernel",
+  interface:"Command-line", desktopEnvironment:null, predecessor:null, successor:null, status:"Historical",
+  description:"HYDRA ran on the C.mmp multiprocessor project at Carnegie Mellon University, starting in 1971. Implemented in the systems language BLISS, it pioneered an object-based capability model — protecting access to abstract objects generally, not just memory segments — letting each user construct their own operating environment on top of the shared kernel.",
+  majorFeatures:["Object-based (not just memory-based) capability protection","Kernel primitives (LNS objects, ports, processes) for building custom environments","Designed for the C.mmp shared-memory multiprocessor"],
+  interestingFacts:["HYDRA let users build their own command and file systems on top of its kernel primitives rather than being confined to one predetermined environment — an unusually flexible design for 1971.","It's considered one of the foundational projects in capability-based operating system research, cited by nearly every later capability system including KeyKOS and EROS."],
+  historicalImportance:"HYDRA's object-capability model directly influenced decades of subsequent capability-security research.",
+  screenshots:[], logo:"other",
+  sourceLinks:[{name:"Wikipedia — List of operating systems", url:"https://en.wikipedia.org/wiki/List_of_operating_systems"}],
+  tags:["capability-based","research","1970s"]
+},
+{
+  id:"cap-keykos", name:"KeyKOS", family:"Capability-based", version:"KeyKOS",
+  releaseDate:"1977 (as GNOSIS); 1983 (production use)", releaseYear:1983, developer:"Tymshare (Norm Hardy, Bill Frantz, Charlie Landau); later Key Logic",
+  publisher:"Key Logic", platform:"IBM System/370 mainframe (later 680x0, 88000)", architecture:"S/370 and ports",
+  deviceType:"Server", category:"Capability-based", kernel:"Nanokernel",
+  interface:"Command-line", desktopEnvironment:null, predecessor:"GNOSIS", successor:"EROS", status:"Discontinued (final release 1988)",
+  description:"KeyKOS is a capability-based, object-oriented nanokernel operating system that saw genuine 24-hour production use on Tymshare's Tymnet hosts starting in 1983 — an unusually rare case of a capability-security research lineage actually running commercial workloads. It could host multiple guest environments (including UNIX) simultaneously on one machine.",
+  majorFeatures:["Nanokernel of roughly 20,000 lines of C, runnable in under 100KB of memory","Checkpointing every few seconds for system-wide crash recovery in under 30 seconds","Hosted guest implementations of EDX, RPS, VM, MVS and UNIX simultaneously"],
+  interestingFacts:["KeyKOS evolved from an earlier Tymshare project called GNOSIS ('Great New Operating System In the Sky').","It achieved intervals between failures exceeding one year in production use — an extraordinary reliability figure for 1980s commercial computing.","Key Logic's closure in 1991 made licensing KeyKOS impractical, which is why its successor EROS was built as a clean-room reconstruction rather than a direct continuation."],
+  historicalImportance:"KeyKOS is one of the very few capability-based systems to see real, sustained commercial production use rather than remaining purely a research artifact.",
+  screenshots:[], logo:"other",
+  sourceLinks:[{name:"Wikipedia — KeyKOS", url:"https://en.wikipedia.org/wiki/KeyKOS"},{name:"Wikipedia — GNOSIS", url:"https://en.wikipedia.org/wiki/GNOSIS"}],
+  tags:["capability-based","server","1980s"]
+},
+{
+  id:"cap-eros", name:"EROS", family:"Capability-based", version:"1.1",
+  releaseDate:"1991 (project start)", releaseYear:1991, developer:"University of Pennsylvania; Johns Hopkins University; The EROS Group, LLC",
+  publisher:"The EROS Group, LLC", platform:"IA-32", architecture:"x86",
+  deviceType:"Research", category:"Capability-based", kernel:"Real-time microkernel",
+  interface:"Command-line", desktopEnvironment:null, predecessor:"KeyKOS", successor:"CapROS / Coyotos", status:"Discontinued (final release 2005)",
+  description:"EROS (the Extremely Reliable Operating System) was a clean-room reconstruction of KeyKOS's ideas, started in 1991 after KeyKOS itself became impossible to license commercially. It is a pure capability system — all authority flows exclusively through secure capabilities, down to the level of individual memory pages — and provides orthogonal persistence, meaning application state survives automatically across reboots.",
+  majorFeatures:["Pure capability-based authority model, enforced down to individual pages","Orthogonal persistence — no explicit save/load needed for application state","Kernel implemented with multiple kernel-mode threads for simpler, faster drivers"],
+  interestingFacts:["EROS was purely a research operating system and was never deployed for real-world production use, unlike its ancestor KeyKOS.","EROS's high-performance invocation work was directly influenced by Jochen Liedtke's L4 microkernel research.","Development stopped in 2005 in favor of two direct successor projects: CapROS and Coyotos."],
+  historicalImportance:"EROS formally proved that confinement — a core building block of system isolation — is enforceable in pure capability systems, a result with no equivalent proof for the protection mechanisms used in mainstream commodity operating systems.",
+  screenshots:[], logo:"other",
+  sourceLinks:[{name:"Wikipedia — EROS (microkernel)", url:"https://en.wikipedia.org/wiki/EROS_(microkernel)"}],
+  tags:["capability-based","research","1990s"]
+},
+{
+  id:"cap-v", name:"V (V-System)", family:"Capability-based", version:"V",
+  releaseDate:"1981", releaseYear:1981, developer:"David Cheriton, Keith A. Lantz, and the Distributed Systems Group, Stanford University",
+  publisher:"Stanford University", platform:"Workstations (Sun, MicroVAX, DEC Firefly)", architecture:"Multi-workstation, message-passing microkernel",
+  deviceType:"Research", category:"Distributed", kernel:"Distributed microkernel",
+  interface:"Command-line / VGTS graphical toolkit", desktopEnvironment:null, predecessor:"Thoth, Verex", successor:null, status:"Discontinued (final release 1988)",
+  description:"The V distributed system was developed at Stanford from 1981 to 1988 as a small, message-oriented distributed kernel for clusters of diskless workstations connected by a high-performance local network, structured around uniform local and remote interprocess communication.",
+  majorFeatures:["Uniform message-passing IPC that works identically for local and remote processes","Designed around diskless workstations backed by shared file servers","Process groups for one-to-many interprocess communication"],
+  interestingFacts:["V was the successor to Stanford's earlier Thoth operating system and Verex kernel, also built by David Cheriton.","Performance studies of V's diskless-workstation file access directly influenced later distributed systems research into network file access costs."],
+  historicalImportance:"V's research into fast, uniform message-passing IPC across a distributed cluster influenced later microkernel and distributed-systems design broadly.",
+  screenshots:[], logo:"other",
+  sourceLinks:[{name:"Wikipedia — V (operating system)", url:"https://en.wikipedia.org/wiki/V_(operating_system)"}],
+  tags:["capability-based","distributed","research","1980s"]
+},
+{
+  id:"cap-fuchsia", name:"Fuchsia", family:"Capability-based", version:"F30",
+  releaseDate:"May 25, 2021 (first consumer deployment)", releaseYear:2021, developer:"Google",
+  publisher:"Google", platform:"ARM64 / x86-64 (currently Google Nest Hub devices)", architecture:"ARM64 / x86-64",
+  deviceType:"Embedded", category:"Capability-based", kernel:"Zircon (microkernel)",
+  interface:"Graphical (Ermine shell)", desktopEnvironment:"Ermine", predecessor:null, successor:null, status:"Active (limited deployment)",
+  description:"Fuchsia is Google's capability-based, open-source operating system built around the Zircon microkernel — notably not Linux-based or Unix-like at all, unlike Android and ChromeOS. It first reached consumers in May 2021 as a background software update to first-generation Google Nest Hub devices, and has expanded gradually since.",
+  majorFeatures:["Capability-based security model at the kernel level, distinct from Android/ChromeOS's Linux foundation","Component-based architecture intended to update independently of the whole OS","Currently deployed on Google Nest Hub smart-display devices"],
+  interestingFacts:["Fuchsia is deliberately not Unix-like — Google built it from scratch rather than basing it on the Linux kernel that Android and ChromeOS use.","Google scaled back Fuchsia's team significantly during 2023 layoffs, and separately discontinued plans to bring the full Chrome browser to it.","Despite early speculation it might replace Android, Fuchsia's real-world deployment has so far stayed limited to smart-display hardware."],
+  historicalImportance:"Fuchsia represents one of the very few capability-based operating systems built by a major technology company to reach real consumer shipping hardware, however limited its rollout has been.",
+  screenshots:[], logo:"other",
+  sourceLinks:[{name:"Wikipedia — Fuchsia (operating system)", url:"https://en.wikipedia.org/wiki/Fuchsia_(operating_system)"}],
+  tags:["capability-based","embedded","google","2020s","current"]
+},
+{
+  id:"cap-harmonyos-next", name:"HarmonyOS NEXT", family:"Capability-based", version:"5.0 / NEXT",
+  releaseDate:"October 22, 2024", releaseYear:2024, developer:"Huawei",
+  publisher:"Huawei", platform:"Huawei smartphones, tablets, wearables, vehicles", architecture:"ARM (transitioning toward RISC-V in parts of the ecosystem)",
+  deviceType:"Mobile", category:"Capability-based", kernel:"HongMeng Microkernel",
+  interface:"Graphical (multi-touch)", desktopEnvironment:"HarmonyOS home screen", predecessor:"HarmonyOS (Android-based, 4.x and earlier)", successor:null, status:"Active",
+  description:"HarmonyOS NEXT is Huawei's complete break from Android: unlike earlier HarmonyOS versions (which were an Android fork), NEXT drops the Linux kernel and Android Open Source Project components entirely in favor of Huawei's own HongMeng microkernel, and no longer supports Android apps at all. It reached a public beta on October 8, 2024 and became officially available on October 22, 2024.",
+  majorFeatures:["HongMeng microkernel replacing the Linux/AOSP foundation used by earlier HarmonyOS versions","No native Android app compatibility, unlike prior HarmonyOS releases","Unified experience across phones, tablets, wearables, PCs and vehicles"],
+  interestingFacts:["By 2024, HarmonyOS (in its earlier Android-based form) had reportedly reached roughly 17% of China's smartphone OS market share.","Huawei has said it plans to drop the 'NEXT' suffix starting with HarmonyOS 6, treating the OpenHarmony-based lineage as simply 'HarmonyOS' going forward."],
+  historicalImportance:"HarmonyOS NEXT is one of the largest real-world deployments of a capability-based, non-Linux mobile operating system, directly motivated by geopolitical restrictions on Huawei's access to Android and Google Mobile Services.",
+  screenshots:[], logo:"other",
+  sourceLinks:[{name:"BetaWiki — HarmonyOS NEXT", url:"https://betawiki.net/wiki/HarmonyOS_NEXT"}],
+  tags:["capability-based","mobile","2020s","current"]
+},
+{
+  id:"cap-phantom", name:"Phantom OS", family:"Capability-based", version:"Alpha",
+  releaseDate:"2009 (public demonstration); development from 2010", releaseYear:2010, developer:"Dmitry Zavalishin / Digital Zone",
+  publisher:"Digital Zone, in cooperation with Innopolis University", platform:"IA-32 (ARM/MIPS/amd64 ports in progress)", architecture:"x86",
+  deviceType:"Embedded", category:"Capability-based", kernel:"Microkernel",
+  interface:"Graphical (planned GUI)", desktopEnvironment:null, predecessor:null, successor:null, status:"Active (experimental)",
+  description:"Phantom OS is a Russian orthogonally-persistent operating system created by programmer Dmitry Zavalishin, built around a persistent virtual machine rather than a traditional file system — 'everything is an object,' in contrast to the Unix philosophy of 'everything is a file.' Applications and their state are designed to survive reboots and crashes automatically via continuous memory snapshots.",
+  majorFeatures:["Orthogonal persistence via continuous virtual-memory snapshots to disk","Object-oriented virtual machine execution model instead of a conventional file system","POSIX compatibility subsystem for porting existing Unix/Linux application code"],
+  interestingFacts:["Phantom OS is aimed particularly at wearable and embedded computers, where instant resume from a persisted state is more valuable than a traditional boot process.","It shares conceptual ground with the much older EROS project, though the two were developed independently."],
+  historicalImportance:"Phantom OS is a rare contemporary example of orthogonal persistence and object-based design being pursued outside the well-known Western capability-system lineage (KeyKOS/EROS).",
+  screenshots:[], logo:"other",
+  sourceLinks:[{name:"Wikipedia — Phantom OS", url:"https://en.wikipedia.org/wiki/Phantom_OS"}],
+  tags:["capability-based","embedded","research","2010s"]
 }
 
 ];
 
 /* Expose globally for other scripts (no module bundler in this project) */
 window.OS_DATA = OS_DATA;
+
+/* =========================================================================
+   WINDOWS CODENAME ARCHIVE
+   -------------------------------------------------------------------------
+   A separate, lightweight reference dataset (not part of OS_DATA) covering
+   historically documented Microsoft/Windows development codenames. This is
+   a curated, verified subset — not an exhaustive A-Z catalogue. Per the
+   archive's accuracy policy, entries are only included where a codename's
+   product association could be verified against a reputable source; where
+   a requested codename (e.g. "Krypton") could not be verified as a real,
+   documented Windows codename in available sources, it has been omitted
+   rather than invented.
+   ========================================================================= */
+
+const WINDOWS_CODENAMES = [
+  { codename:"Janus", product:"Windows & MS-DOS 5 (bundle)", buildRange:"—", period:"c. 1990", type:"Combined product bundle", status:"Shipped (bundle codename)", notes:"Codename for a combined retail bundle of Windows 3.1 and MS-DOS 5. Named after the two-faced Roman god — fitting for a two-in-one product bundle.", source:{name:"Wikipedia — List of Microsoft codenames", url:"https://en.wikipedia.org/wiki/List_of_Microsoft_codenames"} },
+  { codename:"Chicago", product:"Windows 95", buildRange:"Pre-release builds through RTM", period:"1992–1995", type:"Development codename", status:"Shipped as Windows 95", notes:"One of the most famous Windows codenames; also briefly marketed as 'Windows 4.0' internally before launch.", source:{name:"Wikipedia — List of Microsoft codenames", url:"https://en.wikipedia.org/wiki/List_of_Microsoft_codenames"} },
+  { codename:"Nashville", product:"Windows 96", buildRange:"—", period:"1995–1996", type:"Cancelled project", status:"Cancelled — never shipped as a standalone release", notes:"Planned interim release between Windows 95 and Windows 98; ultimately dropped, with some planned features folded into Internet Explorer 4 and Windows 98 instead.", source:{name:"Wikipedia — List of Microsoft codenames", url:"https://en.wikipedia.org/wiki/List_of_Microsoft_codenames"} },
+  { codename:"Memphis", product:"Windows 98", buildRange:"Pre-release builds through RTM", period:"1996–1998", type:"Development codename", status:"Shipped as Windows 98", notes:"Successor development effort to the cancelled Nashville project.", source:{name:"Wikipedia — List of Microsoft codenames", url:"https://en.wikipedia.org/wiki/List_of_Microsoft_codenames"} },
+  { codename:"Daytona", product:"Windows NT 3.5", buildRange:"—", period:"1993–1994", type:"Development codename", status:"Shipped as Windows NT 3.5", notes:"Named after the Daytona International Speedway.", source:{name:"Wikipedia — List of Microsoft codenames", url:"https://en.wikipedia.org/wiki/List_of_Microsoft_codenames"} },
+  { codename:"Cairo", product:"Unrealized NT successor concepts", buildRange:"—", period:"1991–1996", type:"Cancelled / partially released project", status:"Cancelled as a unified release — pieces shipped separately over years", notes:"Ambitious object-oriented filesystem and successor project; never shipped as its own OS, but individual pieces of Cairo research (e.g. parts of Active Directory) surfaced years later in other Windows releases.", source:{name:"Wikipedia — List of Microsoft codenames", url:"https://en.wikipedia.org/wiki/List_of_Microsoft_codenames"} },
+  { codename:"Neptune", product:"Cancelled consumer NT release", buildRange:"Build 5111 and others (leaked)", period:"1999–2000", type:"Cancelled project", status:"Cancelled — merged into Whistler", notes:"Intended as the first consumer-oriented Windows NT release, succeeding the DOS-based consumer line; cancelled and merged with Odyssey to form what became Windows XP.", source:{name:"Wikipedia — Windows Neptune", url:"https://en.wikipedia.org/wiki/Windows_Neptune"} },
+  { codename:"Odyssey", product:"Cancelled Windows 2000 successor (NT6)", buildRange:"—", period:"1999–2000", type:"Cancelled project", status:"Cancelled — merged into Whistler", notes:"Planned business-oriented successor to Windows 2000; merged with Neptune in 2000 to form the unified Whistler project.", source:{name:"Wikipedia — Windows Odyssey", url:"https://en.wikipedia.org/wiki/Windows_Odyssey"} },
+  { codename:"Whistler", product:"Windows XP", buildRange:"Pre-release builds through RTM", period:"1999–2001", type:"Development codename", status:"Shipped as Windows XP (and Windows Server 2003 for the server branch)", notes:"Named after Whistler Blackcomb, the ski resort where Microsoft held design retreats. Formed by merging the cancelled Neptune and Odyssey projects.", source:{name:"Wikipedia — List of Microsoft codenames", url:"https://en.wikipedia.org/wiki/List_of_Microsoft_codenames"} },
+  { codename:"Longhorn", product:"Windows Vista", buildRange:"Pre-release builds through RTM", period:"2001–2006", type:"Development codename", status:"Shipped as Windows Vista (after a widely publicized 2004 development reset)", notes:"One of the most famous troubled developments in Windows history; named after a bar between the Whistler and Blackcomb mountains.", source:{name:"Wikipedia — List of Microsoft codenames", url:"https://en.wikipedia.org/wiki/List_of_Microsoft_codenames"} },
+  { codename:"Blackcomb / Vienna", product:"Cancelled post-Vista concept, partly folded into Windows 7", buildRange:"—", period:"2003–2006", type:"Cancelled / superseded project", status:"Renamed then absorbed", notes:"Originally 'Blackcomb,' planned as Longhorn's ambitious successor; renamed 'Vienna' in 2006 before being scaled back and folded into what shipped as the more modest Windows 7.", source:{name:"Wikipedia — List of Microsoft codenames", url:"https://en.wikipedia.org/wiki/List_of_Microsoft_codenames"} },
+  { codename:"Threshold", product:"Windows 10 (1507 & 1511)", buildRange:"10.0.10240 – 10.0.10586", period:"2014–2015", type:"Development codename", status:"Shipped as Windows 10 original release and November Update", notes:"First Windows 10 codename family, split into Threshold 1 and Threshold 2 for the two 2015 releases.", source:{name:"Wikipedia — Windows 10 version history", url:"https://en.wikipedia.org/wiki/Windows_10_version_history"} },
+  { codename:"Redstone", product:"Windows 10 (1607 – 1809)", buildRange:"10.0.14393 – 10.0.17763", period:"2015–2018", type:"Development codename", status:"Shipped as five numbered Windows 10 feature updates (Redstone 1–5)", notes:"Named after a Minecraft material, reflecting Microsoft's 2014 acquisition of Mojang. Replaced by year/half-year-based names (19H1, 20H2, etc.) after Redstone 5.", source:{name:"Wikipedia — Windows 10 version history", url:"https://en.wikipedia.org/wiki/Windows_10_version_history"} },
+  { codename:"Sun Valley", product:"Windows 11 (21H2 – 23H2)", buildRange:"10.0.22000 – 10.0.22631", period:"2020–2023", type:"Development codename", status:"Shipped as Windows 11 original release, 22H2 and 23H2", notes:"Sun Valley 2 and Sun Valley 3 codenamed the 22H2 and 23H2 feature updates respectively.", source:{name:"BetaWiki — Windows 11 (original release)", url:"https://betawiki.net/wiki/Windows_11_(original_release)"} },
+  { codename:"Hudson Valley", product:"Windows 11 (24H2 – 25H2)", buildRange:"10.0.26100 – 10.0.26200", period:"2023–2025", type:"Development codename", status:"Shipped as Windows 11 24H2 and 25H2", notes:"Succeeded the Sun Valley codename family starting with the 24H2 platform build.", source:{name:"Microsoft Wiki (Fandom) — Windows 11 version history", url:"https://microsoft.fandom.com/wiki/Windows_11_version_history"} }
+];
+
+window.WINDOWS_CODENAMES = WINDOWS_CODENAMES;

@@ -5,13 +5,34 @@
 function searchOS(query) {
   const q = query.trim().toLowerCase();
   if (!q) return [];
-  return OS_DATA.filter(o => {
+
+  const topLevelMatches = OS_DATA.filter(o => {
     const hay = [
       o.name, o.version, o.developer, o.publisher, o.family, o.category,
       o.releaseYear, o.kernel, o.interface, ...(o.tags || []), ...(o.majorFeatures||[])
     ].join(" ").toLowerCase();
     return hay.includes(q);
+  }).map(o => ({ os: o, release: null }));
+
+  // Also surface nested releases whose own version/codename/build matches,
+  // even when the parent OS record itself doesn't — shown as "Parent → Release".
+  const releaseMatches = [];
+  OS_DATA.forEach(o => {
+    if (!o.releases) return;
+    o.releases.forEach(r => {
+      const hay = [r.version, r.codename, r.build].join(" ").toLowerCase();
+      if (hay.includes(q) && !topLevelMatches.find(m => m.os.id === o.id)) {
+        releaseMatches.push({ os: o, release: r });
+      }
+    });
   });
+
+  // Also check the Windows Codename Archive for a name match
+  const codenameMatches = (window.WINDOWS_CODENAMES || []).filter(c =>
+    [c.codename, c.product, c.notes].join(" ").toLowerCase().includes(q)
+  );
+
+  return { results: [...topLevelMatches, ...releaseMatches], codenames: codenameMatches };
 }
 
 function highlightMatch(text, query) {
@@ -45,13 +66,28 @@ function initSearchView() {
   input.value = q;
 
   const run = (query) => {
-    const results = searchOS(query);
+    const data = query ? searchOS(query) : { results: [], codenames: [] };
+    const { results, codenames } = data;
+    const total = results.length + codenames.length;
     document.getElementById("search-result-count").textContent =
-      query ? `${results.length} result${results.length===1?"":"s"} found for "${query}".` : "Start typing to search across every OS in the archive.";
+      query ? `${total} result${total===1?"":"s"} found for "${query}".` : "Start typing to search across every OS in the archive — including nested release histories and Windows codenames.";
     const host = document.getElementById("search-results");
     if (!query) { host.innerHTML = ""; return; }
-    if (!results.length) { host.innerHTML = `<p class="empty-state">No matches. Try a different name, developer, or family.</p>`; return; }
-    host.innerHTML = `<div class="cards-grid">${results.map(o => searchResultCard(o, query)).join("")}</div>`;
+    if (!total) { host.innerHTML = `<p class="empty-state">No matches. Try a different name, developer, codename, or family.</p>`; return; }
+    const cards = results.map(m => searchResultCard(m.os, query, m.release)).join("");
+    const codenameCards = codenames.length ? `
+      <h3>Windows Codenames</h3>
+      <div class="cards-grid cards-grid--compact">
+        ${codenames.map(c => `
+          <article class="os-card">
+            <a class="os-card__link" href="#/codenames">
+              <h3 class="os-card__name">${highlightMatch(c.codename, query)}</h3>
+              <p class="os-card__meta">${highlightMatch(c.product, query)}</p>
+              <span class="os-card__explore">VIEW CODENAME ARCHIVE →</span>
+            </a>
+          </article>`).join("")}
+      </div>` : "";
+    host.innerHTML = `<div class="cards-grid">${cards}</div>${codenameCards}`;
   };
 
   document.getElementById("search-page-form").addEventListener("submit", e => {
@@ -64,17 +100,20 @@ function initSearchView() {
   run(q);
 }
 
-function searchResultCard(os, query) {
+function searchResultCard(os, query, release) {
   const m = familyMeta(os.family);
+  const titleLine = release
+    ? `${highlightMatch(os.name, query)} <span class="os-card__release-arrow">→</span> ${highlightMatch(release.version, query)}`
+    : `${highlightMatch(os.name, query)} ${highlightMatch(os.version, query)}`;
   return `
   <article class="os-card" style="--tile-color:${m.color}">
     <a class="os-card__link" href="#/archive/${os.id}">
       <div class="os-card__top">${logoTile(os)}</div>
-      <h3 class="os-card__name">${highlightMatch(os.name, query)} ${highlightMatch(os.version, query)}</h3>
-      <p class="os-card__meta">${highlightMatch(os.developer, query)} &middot; ${os.releaseYear || "—"}</p>
+      <h3 class="os-card__name">${titleLine}</h3>
+      <p class="os-card__meta">${release ? escapeHTML(release.date) : `${highlightMatch(os.developer, query)} &middot; ${os.releaseYear || "—"}`}</p>
       <div class="os-card__tags">
         <span class="chip" style="--chip-color:${m.color}">${escapeHTML(m.short)}</span>
-        <span class="chip chip--outline">${escapeHTML(os.category)}</span>
+        <span class="chip chip--outline">${release ? "Nested release" : escapeHTML(os.category)}</span>
       </div>
       <span class="os-card__explore">EXPLORE →</span>
     </a>

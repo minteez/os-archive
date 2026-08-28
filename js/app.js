@@ -4,10 +4,11 @@
    GitHub Pages. Each route delegates rendering to a module-level function.
    ========================================================================= */
 
-const BUILD_VERSION = "v2.0.1"; // <- single place to bump the build number
+const BUILD_VERSION = "v2.0.0"; // <- single place to bump the build number
 
 const FAMILY_META = {
   "Windows":            { color: "#00b7ff", short: "WIN" },
+  "Windows Mobile":      { color: "#4fa8e0", short: "WM" },
   "Apple":              { color: "#e0e0e0", short: "MAC" },
   "Linux Kernel":       { color: "#39ff88", short: "KRN" },
   "Linux Distribution": { color: "#39ff88", short: "DIST" },
@@ -15,6 +16,7 @@ const FAMILY_META = {
   "BSD":                { color: "#ff9d5c", short: "BSD" },
   "Mobile":             { color: "#c792ff", short: "MOB" },
   "Console":            { color: "#ff5c8a", short: "CON" },
+  "Capability-based":   { color: "#ffd15c", short: "CAP" },
   "Other":              { color: "#9fe7ff", short: "OTH" }
 };
 
@@ -107,6 +109,7 @@ const routes = [
       return renderComparison(a || null, b || null);
     } },
   { test: h => h === "/quiz", render: renderQuiz },
+  { test: h => h === "/codenames", render: renderCodenames },
   { test: h => h === "/search", render: renderSearchView },
   { test: h => h === "/favorites", render: renderFavorites },
   { test: h => h === "/about", render: renderAbout },
@@ -162,6 +165,7 @@ function afterRender(pathOnly) {
   if (pathOnly === "/gallery") initGallery();
   if (pathOnly === "/compare" || pathOnly.startsWith("/compare/")) initComparison();
   if (pathOnly === "/quiz") initQuiz();
+  if (pathOnly === "/codenames") initCodenames();
   if (pathOnly === "/search") initSearchView();
   if (pathOnly === "/") initHome();
   if (pathOnly.startsWith("/family/")) initArchiveExplorer(pathOnly.split("/")[2]);
@@ -244,14 +248,17 @@ function buildFooter() {
         <a href="#/gallery">Desktop Gallery</a>
         <a href="#/compare">Compare Operating Systems</a>
         <a href="#/quiz">Guess the OS</a>
+        <a href="#/codenames">Windows Codename Archive</a>
       </nav>
       <nav class="footer__col" aria-label="Categories">
         <p class="footer__heading">Categories</p>
         <a href="#/family/Windows">Windows</a>
+        <a href="#/family/Windows%20Mobile">Windows Mobile History</a>
         <a href="#/family/Apple">Apple / Mac</a>
         <a href="#/family/Linux%20Distribution">Linux</a>
         <a href="#/family/UNIX">UNIX &amp; BSD</a>
         <a href="#/family/Mobile">Mobile</a>
+        <a href="#/family/Capability-based">Capability-based</a>
         <a href="#/family/Other">Experimental &amp; Other</a>
       </nav>
       <div class="footer__col">
