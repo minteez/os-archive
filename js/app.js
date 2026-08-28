@@ -4,7 +4,7 @@
    GitHub Pages. Each route delegates rendering to a module-level function.
    ========================================================================= */
 
-const BUILD_VERSION = "v2.0.0"; // <- single place to bump the build number
+const BUILD_VERSION = "v2.0.1"; // <- single place to bump the build number
 
 const FAMILY_META = {
   "Windows":            { color: "#00b7ff", short: "WIN" },
@@ -270,7 +270,7 @@ function buildFooter() {
       </div>
     </div>
     <div class="container footer__legal">
-      <p>Engineered by Minteez &amp; Gemini AI. © 2026. All data streams reserved.</p>
+      <p>Engineered by Minteez &amp; Claude AI. © 2026. All data streams reserved.</p>
       <p class="footer__build">Build ${BUILD_VERSION} · ${stats.total} entries archived</p>
     </div>`;
 }
